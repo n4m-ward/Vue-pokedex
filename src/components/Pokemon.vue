@@ -1,6 +1,6 @@
 <template>
     <div id='pokemon'>
-        <div class="card">
+        <div class="card is-two-fifths">
             <div class="card-image">
                 <figure>
                 <img :src="this.currentImg" alt="Pokemon logo">
@@ -11,7 +11,8 @@
                 <div class="media-left">
                 </div>
                 <div class="media-content">
-                    <p class="title is-4">{{num}} - {{name | upper}}</p>
+                    <router-link :to="{name:'Pokemon',params:{pokemon:name}}" class="title is-4">#{{num}} - {{name | upper}}</router-link>
+                    <br>
                     <p class="subtitle is-6">{{ pokemon.type }}</p>
                 </div>
                 </div>
@@ -73,6 +74,14 @@ export default {
 
 <style scoped>
     #pokemon{
+        margin:0 auto;
         margin-top:2%;
+        align-content: center;
+        justify-content: center;
+    }
+    .card{
+        float:left;
+        width:250px;
+        margin:20px;
     }
 </style>
